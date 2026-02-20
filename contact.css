@@ -1,0 +1,221 @@
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* align-items: flex-start;  Removed to allow stretching */
+}
+
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* LEFT COLUMN */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Ensure it fills the grid cell */
+}
+
+.section-badge {
+    color: #22d3ee;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.contact-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: 'Playfair Display', serif;
+}
+
+.contact-description {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Contact Cards */
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+    /* Take up remaining space */
+    justify-content: space-between;
+    /* Distribute cards */
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    flex-grow: 1;
+    /* Optional: make cards themselves stretch if needed, or just space them */
+    max-height: 100px;
+    /* Prevent them from becoming too huge */
+}
+
+.contact-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #38bdf8;
+    transform: translateX(10px);
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #22d3ee;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+
+.contact-card:hover .icon-box {
+    background: #22d3ee;
+    color: white;
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.card-value {
+    color: #f8fafc;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.arrow-icon {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: #22d3ee;
+}
+
+.contact-card:hover .arrow-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* RIGHT COLUMN (FORM) */
+.contact-form-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    flex-grow: 1;
+    /* Stretch to match cards height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center form vertically if it's shorter than cards, or stretch elements */
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* Space out form elements */
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+    background: rgba(56, 189, 248, 0.05);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #4f46e5, #818cf8);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
+}

@@ -1,0 +1,180 @@
+/* Info Cards */
+/* Info Cards - Glassmorphism */
+.info-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 35px;
+    border-radius: 20px;
+    width: 350px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(194, 175, 27, 0.704);
+    /* Thinner border */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.info-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #22d3ee;
+}
+
+.info-card p {
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.highlight-text {
+    color: #4f46e5;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: block;
+    margin-top: 10px;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    /* Softer shadow */
+    border-color: #38bdf8;
+}
+
+.info-card:hover::before {
+    opacity: 1;
+}
+
+/* CERTIFICATES SUBSECTION */
+.subsection-title {
+    text-align: center;
+    margin: 10px 0 30px;
+    font-size: 1.8rem;
+    color: #cbd5e1;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.subsection-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #38bdf8;
+    /* Sky Blue accent */
+    border-radius: 2px;
+}
+
+.certificates-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.certificate-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #38bdf8;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cert-icon {
+    font-size: 2rem;
+    color: #38bdf8;
+    margin-bottom: 15px;
+    background: rgba(56, 189, 248, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.cert-details h4 {
+    color: #f8fafc;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.cert-details p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.cert-date {
+    display: block;
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.view-cert-btn {
+    text-decoration: none;
+    color: #38bdf8;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-cert-btn:hover {
+    background: rgba(56, 189, 248, 0.1);
+    border-color: #38bdf8;
+    color: #fff;
+}

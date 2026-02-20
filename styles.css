@@ -1,0 +1,332 @@
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #0f172a;
+    /* Keep dark base */
+    color: #f8fafc;
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    /* Slight breathing room for text */
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo,
+.nav-menu a,
+.section-title,
+.project-card h3,
+.contact-title,
+.submit-btn,
+.project-badge {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.05em;
+    /* Premium feel for headings */
+}
+
+
+/* Animated Background */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: drift 20s infinite alternate;
+}
+
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: #73a04f;
+    /* Deep Indigo/Slate */
+    opacity: 0.2;
+    animation-duration: 25s;
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: #722e81;
+    /* Darker Indigo */
+    opacity: 0.2;
+    animation-duration: 30s;
+    animation-delay: -5s;
+}
+
+.blob-3 {
+    top: 40%;
+    left: 40%;
+    width: 400px;
+    height: 400px;
+    background: #408d9c;
+    /* Match bg but slightly lighter */
+    opacity: 0.3;
+    animation-duration: 22s;
+    animation-delay: -10s;
+}
+
+.blob-4 {
+    top: 10%;
+    right: 20%;
+    width: 300px;
+    height: 300px;
+    background: #3e8487;
+    /* Very dark indigo */
+    opacity: 0.2;
+    animation-duration: 28s;
+    animation-delay: -8s;
+}
+
+.blob-5 {
+    bottom: 20%;
+    left: 10%;
+    width: 350px;
+    height: 350px;
+    background: #561786;
+    /* Indigo */
+    opacity: 0.15;
+    animation-duration: 26s;
+    animation-delay: -15s;
+}
+
+@keyframes drift {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(50px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-30px, 50px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    height: 8vh;
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrolling Gradient Bottom Border */
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg,
+            #baffc9, #bae1ff, #ffb3ba, #ffffba, #baffc9);
+    /* Lite Pastel Colors */
+    background-size: 200% 100%;
+    animation: rainbowScroll 3s linear infinite;
+}
+
+@keyframes rainbowScroll {
+    0% {
+        background-position: 0% 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #f8fafc;
+    background: linear-gradient(135deg, #4f46e5, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #f8fafc;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+.nav-link::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #22d3ee;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 10px #22d3ee;
+}
+
+.nav-link:hover {
+    color: #22d3ee;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* SECTIONS */
+/* SECTIONS */
+.section {
+    padding: 80px 20px;
+    /* Increased vertical padding */
+    position: relative;
+    z-index: 1;
+    scroll-margin-top: 100px;
+    /* Offset for fixed navbar */
+}
+
+.dark-section {
+    background: transparent;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #f8fafc, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* CARDS */
+/* CARDS */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Responsive Grid */
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+    /* Center cards in their cells */
+}
+
+/* RESPONSIVE */
+/* HAMBURGER MENU */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #f8fafc;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.98);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 4px solid #4f46e5;
+        /* Extra touch for mobile menu */
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+}
