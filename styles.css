@@ -241,7 +241,7 @@ h6,
     /* Increased vertical padding */
     position: relative;
     z-index: 1;
-    scroll-margin-top: 100px;
+    scroll-margin-top: 50px;
     /* Offset for fixed navbar */
 }
 
