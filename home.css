@@ -1,9 +1,6 @@
 /* =========================================
    HERO SECTION STYLES
    ========================================= */
-
-/* Specific Hero Title Gradient */
-/* Specific Hero Title Gradient - Elegant Gold/Cyan */
 .hero-title .highlight {
     background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
     /* Sky to Violet */
@@ -65,6 +62,12 @@
     margin-bottom: 35px;
     max-width: 500px;
     font-weight: 300;
+    text-indent: 50px;
+}
+
+.highlight-gold {
+    color: #f59e0b;
+    font-weight: 600;
 }
 
 .hero-actions {
@@ -76,7 +79,7 @@
 /* Stylish Button */
 /* Stylish Button - Sleek & Silent */
 .primary-button.stylish-btn {
-    width: 40%;
+    width: 50%;
     padding: 12px 35px;
     font-size: 1.1rem;
     font-weight: 700;
@@ -94,6 +97,7 @@
     gap: 15px;
     transition: all 0.4s ease;
     backdrop-filter: blur(5px);
+    text-decoration: none;
 }
 
 .primary-button.stylish-btn::before {
@@ -117,7 +121,6 @@
 }
 
 .social-links a {
-    color: #94a3b8;
     font-size: 1.3rem;
     transition: all 0.3s ease;
     display: flex;
@@ -126,15 +129,49 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.658);
     background: rgba(255, 255, 255, 0.01);
     text-decoration: none;
 }
 
-.social-links a:hover {
-    color: #38bdf8;
-    border-color: #38bdf8;
-    background: rgba(56, 189, 248, 0.1);
+/* Original Brand Colors */
+.social-links .github {
+    color: #ffffff;
+}
+
+.social-links .github:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.social-links .linkedin {
+    color: #0077b5;
+}
+
+.social-links .linkedin:hover {
+    border-color: #0077b5;
+    background: rgba(0, 119, 181, 0.1);
+    transform: translateY(-3px);
+}
+
+.social-links .email {
+    color: #ea4335;
+}
+
+.social-links .email:hover {
+    border-color: #ea4335;
+    background: rgba(234, 67, 53, 0.1);
+    transform: translateY(-3px);
+}
+
+.social-links .phone {
+    color: #25d366;
+}
+
+.social-links .phone:hover {
+    border-color: #25d366;
+    background: rgba(37, 211, 102, 0.1);
     transform: translateY(-3px);
 }
 
